@@ -31,11 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-bin/pom.xml
-bin/mvnw.cmd
-bin/mvnw
-bin/.mvn/wrapper/maven-wrapper.jar
-bin/.mvn/wrapper/maven-wrapper.jar
-bin/.mvn/wrapper/maven-wrapper.properties
-bin/.mvn/wrapper/maven-wrapper.jar
-bin/src/main/java/br/imd/itchinproject/ItchinProjectApplication.class
