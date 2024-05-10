@@ -81,7 +81,8 @@ public class Usuario {
 
 	public void setFavoriteGames(List<Jogo> favoriteGames) {
 		this.favoriteGames = favoriteGames;
-	} 
+	}
+} 
     
     // getters e setters
     
