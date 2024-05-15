@@ -11,6 +11,9 @@ public class Usuario {
     private String username;
     private String password;
     
+    @OneToMany(mappedBy = "following")
+    private List<Seguir> followers; // Seguidores do usuário
+    
     @OneToMany(mappedBy = "follower")
     private List<Seguir> following; // Usuários seguidos
     
@@ -51,6 +54,14 @@ public class Usuario {
 		this.password = password;
 	}
 
+	public List<Seguir> getFollowers() {
+		return followers;
+	}
+
+	public void setFollowers(List<Seguir> followers) {
+		this.followers = followers;
+	}
+
 	public List<Seguir> getFollowing() {
 		return following;
 	}
@@ -83,6 +94,3 @@ public class Usuario {
 		this.favoriteGames = favoriteGames;
 	}
 } 
-    
-    // getters e setters
-    

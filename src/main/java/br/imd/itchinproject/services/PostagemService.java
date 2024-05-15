@@ -3,7 +3,9 @@ package br.imd.itchinproject.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.imd.itchinproject.entity.Feed;
 import br.imd.itchinproject.entity.Postagem;
+import br.imd.itchinproject.entity.Usuario;
 import br.imd.itchinproject.respository.PostagemRepository;
 
 import java.util.List;
@@ -22,9 +24,26 @@ public class PostagemService {
         return postagemRepository.findById(id).orElse(null);
     }
 
-    public Postagem save(Postagem postagem) {
-        return postagemRepository.save(postagem);
-    }
+    //Terminar
+    /*public Postagem save(Postagem postagem) {
+    	Postagem savedPostagem = postagemRepository.save(postagem);
+        
+        // Atualizar o feed dos seguidores
+        Usuario usuario = savedPostagem.getUser();
+        List<Usuario> seguidores = usuario.getFollowers();
+        for (Usuario seguidor : seguidores) {
+            Feed feed = seguidor.getFeed();
+            if (feed == null) {
+                feed = new Feed();
+                feed.setUsuario(seguidor);
+                feed.setPostagens(new ArrayList<>());
+            }
+            feed.getPostagens().add(savedPostagem);
+            //FeedRepository.save(feed);
+        }
+        
+        return savedPostagem;
+    }*/
 
     public void deleteById(Long id) {
         postagemRepository.deleteById(id);
