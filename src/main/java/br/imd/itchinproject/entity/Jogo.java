@@ -49,6 +49,4 @@ public class Jogo {
 		this.likedByUsers = likedByUsers;
 	}
     
-    // getters e setters
-    
 }

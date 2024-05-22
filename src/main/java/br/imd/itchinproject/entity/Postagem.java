@@ -1,7 +1,6 @@
 package br.imd.itchinproject.entity;
 
 import jakarta.persistence.*;
-import java.util.List;
 
 @Entity
 public class Postagem {
@@ -12,59 +11,54 @@ public class Postagem {
     private String imageUrl; // URL da imagem, se houver
     private String videoUrl; // URL do vídeo, se houver
     private int likes; // Quantidade de curtidas
-    
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private Usuario user; // Usuário que fez o post
 
-	public Long getId() {
-		return id;
-	}
+    private Long userId; // ID do usuário que fez o post
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getContent() {
-		return content;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public String getImageUrl() {
-		return imageUrl;
-	}
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
-	public String getVideoUrl() {
-		return videoUrl;
-	}
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
-	public void setVideoUrl(String videoUrl) {
-		this.videoUrl = videoUrl;
-	}
+    public String getVideoUrl() {
+        return videoUrl;
+    }
 
-	public int getLikes() {
-		return likes;
-	}
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
+    }
 
-	public void setLikes(int likes) {
-		this.likes = likes;
-	}
+    public int getLikes() {
+        return likes;
+    }
 
-	public Usuario getUser() {
-		return user;
-	}
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
 
-	public void setUser(Usuario user) {
-		this.user = user;
-	}
-    
-    // getters e setters
-    
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 }

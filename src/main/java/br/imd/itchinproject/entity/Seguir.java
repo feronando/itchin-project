@@ -9,38 +9,34 @@ public class Seguir {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @ManyToOne
-    @JoinColumn(name = "follower_id")
-    private Usuario follower; // Usuário que está seguindo
+    @Column(name = "follower_id")
+    private Long followerId; // ID do usuário que está seguindo
     
-    @ManyToOne
-    @JoinColumn(name = "following_id")
-    private Usuario following; // Usuário seguido
+    @Column(name = "following_id")
+    private Long followingId; // ID do usuário seguido
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Usuario getFollower() {
-		return follower;
-	}
+    public Long getFollowerId() {
+        return followerId;
+    }
 
-	public void setFollower(Usuario follower) {
-		this.follower = follower;
-	}
+    public void setFollowerId(Long followerId) {
+        this.followerId = followerId;
+    }
 
-	public Usuario getFollowing() {
-		return following;
-	}
+    public Long getFollowingId() {
+        return followingId;
+    }
 
-	public void setFollowing(Usuario following) {
-		this.following = following;
-	}
-    
-    // getters e setters
+    public void setFollowingId(Long followingId) {
+        this.followingId = followingId;
+    }
     
 }
