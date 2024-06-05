@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Upload Game</title>
+</head>
+<body>
+    <h1>Upload a Game</h1>
+    <form method="post" enctype="multipart/form-data" action="/upload">
+        <label for="name">Game Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="file">Game File:</label>
+        <input type="file" id="file" name="file" required>
+        <br>
+        <button type="submit">Save</button>
+    </form>
+
+    <div th:if="${message}">
+        <p th:text="${message}"></p>
+    </div>
+    <div th:if="${link}">
+        <a th:href="${link}">Click here to access the game</a>
+    </div>
+</body>
+</html>
