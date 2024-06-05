@@ -2,8 +2,7 @@ package br.imd.itchinproject.control;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -61,7 +60,7 @@ public class GameController {
             Files.createDirectories(unzipDir);
 
             // Explicitly specify the charset for ZipInputStream
-            try (ZipInputStream zis = new ZipInputStream(new ByteArrayInputStream(file.getBytes()), Charset.forName("UTF-8"))) {
+            try (ZipInputStream zis = new ZipInputStream(new ByteArrayInputStream(file.getBytes()), StandardCharsets.ISO_8859_1)) {
                 ZipEntry zipEntry;
                 while ((zipEntry = zis.getNextEntry()) != null) {
                     Path newFile = unzipDir.resolve(zipEntry.getName());
